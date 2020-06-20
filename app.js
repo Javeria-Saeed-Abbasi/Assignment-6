@@ -67,69 +67,45 @@
 // document.write('Number : '.bold() + num + "<br>" );
 // document.write('Result : '.bold() + convertStr + "<br>" );
 
-// ************************Task 13--------tick
+// ************************Task 13
 // var user = prompt('Enter a valid username ...');
 // var length =  user.length;
 // for (var i = 0; i < length; i++) {   
 //     var convert = user.charCodeAt(i);  
-//     if ( convert >= 32 && convert <= 44){
+//     if (convert == 33 || convert == 44 || convert == 46|| convert == 64){
 //         alert('"Please enter a valid username"');
 //     }
-//     else if ( convert >= 46 && convert <=64){
-//         alert('"Please enter a valid username"');
-//     }   
-//     else{
-//         alert('Your username is valid');
-//     }
-// }
 
-// ************************Task 14--------tick
+
+// ************************Task 14
 // var found = prompt('Welcome to ABC Bakery! What do you want to order Sir/Ma'+'am?');
 // var  A =["cake","apple pie","cookie","chips","patties"];
 // var convert = found.toLowerCase(); 
-// var length = A.length;
-// for (var i=0; i<=length; i++){
-//     if (A[i] === convert){
-//         alert(found + " is available at index " + i  + " in our bakery "   );
-//     }
-//     else{
-//         alert("We are sorry... "+ found + " is not available in our bakery ");
-//     }
+// var indexOfFirst = A.indexOf(convert);
+// if(indexOfFirst !== -1){
+//     alert(found + " is available at index " + indexOfFirst  + " in our bakery ");
 // }
-
-
+// else if(indexOfFirst === -1){
+//     alert("We are sorry... "+ found + " is not available in our bakery ");   
+// }
 // ************************Task 15--------tick
 
 // var password = prompt('Enter your password');
-// var CapitalLetter   = false;
-// var SmallLetter = false;
-// var Numbr = false;
-// for (var i = 0; i<=password.length; i++) {
-//   var charCode = password.charCodeAt(i);
-//   if (isNaN(parseInt(password[0])) ) {
-
-//   }
-//   else  {
-//    document.write("Password should not start with number");
-//   }
-//   if (password.length !== 6 ){
-//       document.write('Enter atleast 6 characters');
-//   }
-//     if(charCode > 47 && charCode < 58)
-//    {
-//         Numbr = true;
+// var convert = password.charCodeAt(0);
+// if( convert>=48 && convert<=57){
+//         alert('Please Enter a valid password. Password should not start with a number');
 //     }
-//   if(charCode > 64 && charCode < 91)
-//    { 
-//        CapitalLetter = true;
+//  else if(password.length !== 6){
+//         alert('Please Enter a valid password. Password length should be 6');
 //     }
-//   if(charCode > 96 && charCode < 123)
-//     {
-//         SmallLetter = true;
+//     for (var i = 0; i<=password.length; i++) {
+//     var code = password.charCodeAt(i);
+//     // if((code >= 48 && code <= 57) || (code >= 65 && code <= 90) || (code >= 97 && code <= 122))
+//     if ((code == 47 && code <= 58) ||  (code >= 64 && code <= 91)  || (code >= 96 && code <= 123))
+//      { 
+//   alert ('Please Enter a valid password. Password should be alphanumeric');
 //     }
-//     if(CapitalLetter && SmallLetter && Numbr && password.length == 6 )
-//   alert("Your password is valid");
-// }  
+// }
 
 // ************************Task 16
 // var university = "University of Karachi ";
@@ -352,13 +328,14 @@
 // document.write(currentDate +"<br>");
 
 
-// ************************Task 12--------tick
+// ************************Task 12
 // var currentDate = new Date();
 // var currentTime = currentDate.getTime();
 // // var years = currentDate.getFullYear();
-// alert(" Current Date : "+ currentDate + " "  + "100 years back, it was ");
-// var newyear = currentDate.setFullYear(1920);
-// alert(currentDate +' ');
+// document.write(" Current Date : "+ currentDate +"<br>" + "100 years back, it was ");
+// var newyear = currentDate.setFullYear(currentDate.getFullYear()- 100);
+// // var newyear = currentDate.getFullYear()-100;
+// document.write(currentDate +' ');
 
 
 // ************************Task 13
@@ -509,3 +486,92 @@
 
 
 // ************************Task 8
+// var base= +prompt('Enter a base value');
+// var prep= +prompt('Enter a prepndicular value');
+// function hypotenuse(base, prep) {
+//     function square(x) {
+//          return x*x; 
+//         }
+//     return Math.sqrt(square(base) + square(prep));
+//  }
+//  var result = hypotenuse(base, prep);
+//  alert(result);
+
+
+
+// ************************Task 9
+// var width = +prompt('Enter the width');
+// var height = +prompt('Enter the height');
+// function area(width, height){
+//     return width*height;
+// }
+// alert (area(2,3));// arguments as a value
+// alert (area(width, height));//arguments as a variables
+
+
+// ************************Task 10
+// var str = prompt('Enter a word');
+// function palindrome(str) {
+//     str = str.toLowerCase();
+//     var len = str.length;
+//     for (var i = 0; i < len/2; i++) {
+//       if (str[i] !== str[len - 1 - i])
+//        {      
+//           return str+" is not palindrome";
+//       }
+//     }
+//     return str+" is palindrome";
+//    }
+//    alert(palindrome(str));
+
+
+// ************************Task 11
+// // var str =prompt('Enter a Pharse or Sentence');
+// function firstLetterCap(str) {
+//     var splitStr = str.toLowerCase().split(' ');
+//     for (var i = 0; i < splitStr.length; i++) {
+//         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+//     }
+//     return splitStr.join(' '); 
+//  }
+ 
+//  document.write(firstLetterCap("the quick brown fox"));
+
+
+
+// ************************Task 12
+// // var str = prompt('Enter a sentence or pharse');
+// function longer(currentWord, longWord) {
+//            //  Its a condition	? :	Condition	? "Yes" : "No"
+//     return (currentWord.length > longWord.length) ? currentWord : longWord;
+//   }
+//   function longestWord(str) {
+//     var words = str.split(' ');
+//     return words.reduce(longer);
+//   }
+//   alert(longestWord("Web Development Tutorial"));
+
+
+// ************************Task 13
+// // var str =prompt('Enter the word or pharse...');
+// // var letter = prompt('Enter the occurence letter..');
+// function count(str, letter){
+//     var convert = str.toLowerCase();
+//     var occur = str.split(letter).length-1
+//     return " The letter of occurence of "+ "'o' is: "+occur+ " times.";
+// }
+// document.write(count("JSResourceS.com", "o"));
+
+
+// ************************Task 14
+// function calcCircumference(radius){
+//     var cicum= 2*Math.PI*radius;
+//     return cicum;
+// }
+// document.write(calcCircumference()+"<br>");
+
+// function calcArea(radius){
+//     var area= Math.PI*(radius*radius);
+//     return area;
+// }
+// document.write(calcArea());
