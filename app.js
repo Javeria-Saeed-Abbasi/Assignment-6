@@ -90,22 +90,33 @@
 // }
 // ************************Task 15--------tick
 
-// var password = prompt('Enter your password');
-// var convert = password.charCodeAt(0);
-// if( convert>=48 && convert<=57){
-//         alert('Please Enter a valid password. Password should not start with a number');
-//     }
-//  else if(password.length !== 6){
-//         alert('Please Enter a valid password. Password length should be 6');
-//     }
-//     for (var i = 0; i<=password.length; i++) {
-//     var code = password.charCodeAt(i);
-//     // if((code >= 48 && code <= 57) || (code >= 65 && code <= 90) || (code >= 97 && code <= 122))
-//     if ((code == 47 && code <= 58) ||  (code >= 64 && code <= 91)  || (code >= 96 && code <= 123))
-//      { 
-//   alert ('Please Enter a valid password. Password should be alphanumeric');
-//     }
-// }
+// var password = prompt("Enter your password: ");
+//         var checkPassword = false
+//         if ((password.charCodeAt(0) >= 48) && (password.charCodeAt(0) <= 57)) {
+//             alert("Password can not begin with a number\nPlease enter a valid password.")
+//         }
+//         else if (password.length < 6) {
+//             alert("Password must contain at least 6 character\nPlease enter a valid password.")
+//         }
+//         else {
+
+//             for (var i = 0; i <= password.length - 1; i++) {
+//                 if (((password.charCodeAt(i) >= 48) && (password.charCodeAt(i) <= 57)) || ((password.charCodeAt(i) >= 65) && (password.charCodeAt(i) <= 90)) || ((password.charCodeAt(i) >= 97) && (password.charCodeAt(i) <= 122))) {
+//                     console.log(password.charCodeAt(i))
+//                     checkPassword = true;
+//                 }
+//                 else {
+//                     checkPassword = false;
+//                     break;
+//                 }
+//             }
+//             if (checkPassword) {
+//                 alert("correct password")
+//             }
+//             else {
+//                 alert("invalid password")
+//             }
+//         }
 
 // ************************Task 16
 // var university = "University of Karachi ";
